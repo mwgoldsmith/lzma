@@ -201,25 +201,42 @@
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -242,25 +259,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -286,25 +320,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -329,25 +380,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
     <ClCompile>
@@ -375,25 +443,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\src\common;..\..\src\liblzma\api\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -423,25 +508,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\src\common;..\..\src\liblzma\api\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -476,25 +578,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\src\common;..\..\src\liblzma\api\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
@@ -528,25 +647,42 @@ IF EXIST "$(OutDir)\include\$(ProjectName)" (
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
     </Bscmake>
-    <PostBuildEvent>
-      <Command>MKDIR $(OutDir)include
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)include"
-MKDIR "$(OutDir)\include\$(ProjectName)"
-COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\*.h" "$(OutDir)\include\$(ProjectName)"
-MKDIR $(OutDir)\licenses"
-COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)licenses\$(ProjectName).txt"
-</Command>
-    </PostBuildEvent>
     <PreBuildEvent>
       <Command>
 IF EXIST "$(ProjectDir)..\..\config.h" (
   DEL "$(ProjectDir)..\..\config.h"
 )
 
-IF EXIST "$(OutDir)\include\$(ProjectName)" (
-  RD /s /q "$(OutDir)\include\$(ProjectName)"
-)</Command>
+IF EXIST "$(OutDir)..\..\licenses\$(ProjectName).txt" (
+  DEL "$(OutDir)..\..\licenses\$(ProjectName).txt"
+)
+
+IF EXIST "$(OutDir)..\..\include\$(ProjectName)" (
+  RD /s /q "$(OutDir)..\..\include\$(ProjectName)"
+)
+      </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+ECHO Off
+SETLOCAL EnableDelayedExpansion EnableExtensions
+
+MKDIR "$(OutDir)..\..\include"
+MKDIR "$(OutDir)..\..\include\$(ProjectName)"
+
+COPY "$(ProjectDir)..\..\src\liblzma\api\lzma.h" "$(OutDir)..\..\include\"
+
+FOR %%H IN (base.h bcj.h block.h check.h container.h delta.h filter.h hardware.h index.h index_hash.h lzma12.h stream_flags.h version.h vli.h) DO (
+  SET "_HEADER=%%H"
+  COPY "$(ProjectDir)..\..\src\liblzma\api\lzma\!_HEADER!" "$(OutDir)..\..\include\$(ProjectName)"
+)
+
+MKDIR "$(OutDir)..\..\licenses"
+COPY "$(ProjectDir)..\..\COPYING.LGPLv2.1" "$(OutDir)..\..\licenses\$(ProjectName).txt" 
+
+ENDLOCAL
+      </Command>
+    </PostBuildEvent>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\src\common;..\..\src\liblzma\api\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
