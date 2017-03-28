@@ -122,7 +122,7 @@
 #endif
 
 /* Define to 1 to disable debugging code. */
-//#define NDEBUG 1
+//#undef NDEBUG
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "XZ Utils"
@@ -140,9 +140,3 @@
 /* Define to 1 if the system supports fast unaligned access to 16-bit and
    32-bit integers. */
 #define TUKLIB_FAST_UNALIGNED_ACCESS 1
-
-#define HAVE_ICONV 1
-
-#define HAVE_MEMORY_H 1
-
-#define HAVE_UNISTD_H 1
