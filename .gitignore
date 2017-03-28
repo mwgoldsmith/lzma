@@ -64,3 +64,9 @@ build-aux/test-driver
 /src/liblzma/api/Makefile
 /src/lzmainfo/Makefile
 /src/xzdec/Makefile
+
+.vs/
+*.VC.db
+*.opendb
+*.sdf
+*.vcxproj.user
