@@ -474,7 +474,7 @@ ENDLOCAL
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\src\liblzma\api;$(ProjectDir)..\..\src\liblzma\common;$(ProjectDir)..\..\src\liblzma\check;$(ProjectDir)..\..\src\liblzma\lz;$(ProjectDir)..\..\src\liblzma\rangecoder;$(ProjectDir)..\..\src\liblzma\lzma;$(ProjectDir)..\..\src\liblzma\delta;$(ProjectDir)..\..\src\liblzma\simple;$(ProjectDir)..\..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;inline=_inline;restrict=__restrict;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORT;HAVE_CONFIG_H;inline=_inline;restrict=__restrict;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
@@ -554,7 +554,7 @@ ENDLOCAL
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\src\liblzma\api;$(ProjectDir)..\..\src\liblzma\common;$(ProjectDir)..\..\src\liblzma\check;$(ProjectDir)..\..\src\liblzma\lz;$(ProjectDir)..\..\src\liblzma\rangecoder;$(ProjectDir)..\..\src\liblzma\lzma;$(ProjectDir)..\..\src\liblzma\delta;$(ProjectDir)..\..\src\liblzma\simple;$(ProjectDir)..\..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;inline=_inline;restrict=__restrict;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORT;HAVE_CONFIG_H;inline=_inline;restrict=__restrict;_DEBUG;_WINDOWS;_USRDLL;WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
@@ -634,7 +634,7 @@ ENDLOCAL
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\src\liblzma\api;$(ProjectDir)..\..\src\liblzma\common;$(ProjectDir)..\..\src\liblzma\check;$(ProjectDir)..\..\src\liblzma\lz;$(ProjectDir)..\..\src\liblzma\rangecoder;$(ProjectDir)..\..\src\liblzma\lzma;$(ProjectDir)..\..\src\liblzma\delta;$(ProjectDir)..\..\src\liblzma\simple;$(ProjectDir)..\..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;inline=_inline;restrict=__restrict;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORT;HAVE_CONFIG_H;inline=_inline;restrict=__restrict;WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
@@ -716,7 +716,7 @@ ENDLOCAL
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\src\liblzma\api;$(ProjectDir)..\..\src\liblzma\common;$(ProjectDir)..\..\src\liblzma\check;$(ProjectDir)..\..\src\liblzma\lz;$(ProjectDir)..\..\src\liblzma\rangecoder;$(ProjectDir)..\..\src\liblzma\lzma;$(ProjectDir)..\..\src\liblzma\delta;$(ProjectDir)..\..\src\liblzma\simple;$(ProjectDir)..\..\src\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
-      <PreprocessorDefinitions>HAVE_CONFIG_H;inline=_inline;restrict=__restrict;NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DLL_EXPORT;HAVE_CONFIG_H;inline=_inline;restrict=__restrict;NDEBUG;_WINDOWS;_USRDLL;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BrowseInformation>false</BrowseInformation>
       <AssemblerListingLocation>$(OutDir)..\..\asm\$(PlatformTarget)\$(Configuration)\$(ConfigurationType)\$(ProjectName)\</AssemblerListingLocation>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
